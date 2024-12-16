@@ -1,6 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet, Image} from 'react-native';
+import {ContinueButton} from '../../../components/Button/ContinueButton';
 
 const PasswordChanged = () => {
   return (
@@ -18,17 +19,22 @@ const PasswordChanged = () => {
       <Text style={styles.text}>Password Changed</Text>
       <Text style={styles.text1}>Yes password has been changed</Text>
       <Text style={styles.text2}>successfully.</Text>
-      <TouchableOpacity style={styles.container1}>
+      {/* <TouchableOpacity style={styles.container1}>
         <Text style={styles.text3}>Back to Login</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
+      <View style={{width: '78%', marginTop:30}}>
+        <ContinueButton Label={'Back to Login'} backgroundcolor={'#093ccf'} />
+      </View>
     </View>
   );
 };
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    width: '100%',
     // justifyContent: 'center',
     alignItems: 'center',
+    // backgroundColor: 'red',
   },
   text: {
     fontSize: 28,

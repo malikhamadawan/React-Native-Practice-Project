@@ -1,51 +1,28 @@
-/* eslint-disable react-native/no-inline-styles */
-import {
-  View,
-  Text,
-  StyleSheet,
-  TextInput,
-  TouchableOpacity,
-  Image,
-} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import React from 'react';
+import {AppInput} from '../../../components/Input/AppInput';
 
 const Login = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Login</Text>
       <Text style={styles.text1}>Login to get started</Text>
-      <Text style={styles.text2}>Email Address</Text>
-      <View style={styles.image}>
-        <Image
-          source={require('../../../assets/images/emailicon.png')}
-          resizeMode={'contain'}
-          style={{height: 20, width: 20, marginHorizontal: 8}}
-        />
-        <TextInput style={styles.input} placeholder="Enter Email" />
-      </View>
+      <AppInput
+        icon={false}
+        imageSrc={require('../../../assets/images/emailicon.png')}
+        label={'Email'}
+        placeholder={'Enter your Email '}
+      />
       <TouchableOpacity>
         <Text style={styles.text3}>Forgot Password?</Text>
       </TouchableOpacity>
-      <Text style={styles.text4}>Password</Text>
-      <View style={styles.image1}>
-        <Image
-          source={require('../../../assets/images/lock.png')}
-          resizeMode={'contain'}
-          style={{height: 20, width: 20, marginHorizontal: 8}}
-        />
-        <TextInput style={styles.input} placeholder="Enter Password" />
-        <TouchableOpacity>
-          <Image
-            source={require('../../../assets/images/hiddenItem.png')}
-            resizeMode={'contain'}
-            style={{
-              height: 25,
-              width: 25,
-            }}
-          />
-        </TouchableOpacity>
-      </View>
-      <TouchableOpacity style={styles.container1}>
+      <AppInput
+        icon={true}
+        imageSrc={require('../../../assets/images/lock.png')}
+        label={'Password'}
+        placeholder={'Enter your Password'}
+      />
+      <TouchableOpacity style={styles.container1} activeOpacity={0.5}>
         <Text style={styles.text5}>Login</Text>
       </TouchableOpacity>
       <TouchableOpacity>
@@ -70,11 +47,6 @@ const styles = StyleSheet.create({
     opacity: 0.8,
     marginLeft: 24,
   },
-  text2: {
-    marginTop: 50,
-    fontWeight: '350',
-    marginLeft: 24,
-  },
   input: {
     height: 48,
     width: '80%',
@@ -85,11 +57,6 @@ const styles = StyleSheet.create({
     marginRight: 24,
     marginTop: 20,
     color: '#2459f2',
-  },
-  text4: {
-    marginTop: 30,
-    fontWeight: '350',
-    marginLeft: 24,
   },
   container1: {
     backgroundColor: '#023bdf',
@@ -111,26 +78,6 @@ const styles = StyleSheet.create({
     marginTop: 35,
     fontSize: 15,
     color: '#2352db',
-  },
-  image: {
-    backgroundColor: '#e5e7e9',
-    height: 48,
-    width: '88%',
-    marginTop: 10,
-    alignSelf: 'center',
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderRadius: 4,
-  },
-  image1: {
-    backgroundColor: '#e5e7e9',
-    height: 48,
-    width: '88%',
-    marginTop: 10,
-    alignSelf: 'center',
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderRadius: 4,
   },
 });
 

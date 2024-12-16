@@ -1,8 +1,7 @@
-/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-import {PasswordInput} from '../../../components/PasswordInput/PasswordInput';
 import {ContinueButton} from '../../../components/Button/ContinueButton';
+import {AppInput} from '../../../components/Input/AppInput';
 
 const ResetScreen = () => {
   return (
@@ -12,7 +11,12 @@ const ResetScreen = () => {
         Enter email address and link to reset your password
       </Text>
       <Text style={styles.text2}>will be sent to you</Text>
-      <PasswordInput />
+      <AppInput
+        icon={true}
+        imageSrc={require('../../../assets/images/lock.png')}
+        label={'Password'}
+        placeholder={'Enter Password'}
+      />
       <ContinueButton Label={'Continue'} backgroundcolor={'#093ccf'} />
       <View style={styles.container3}>
         <Text>Remember Password?</Text>

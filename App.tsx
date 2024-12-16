@@ -8,11 +8,11 @@ import CreateNewPassword from './src/screens/Auth/CreateNewPassword/CreateNewPas
 const App = () => {
   return (
     <>
-      <Login />
+      {/* <Login /> */}
       {/* <ResetScreen /> */}
       {/* <CreateNewPassword  /> */}
       {/* <PasswordChanged /> */}
-      {/* <CreateAccount /> */}
+      <CreateAccount />
       {/* <FbLogin /> */}
     </>
   );

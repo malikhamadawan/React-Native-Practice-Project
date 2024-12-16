@@ -7,13 +7,12 @@ import {
   Image,
   TouchableOpacity,
   Platform,
-  ScrollView,
 } from 'react-native';
-import {AppInput} from '../../../components';
+import { AppInput } from '../../../components/Input/AppInput';
 
 const CreateAccount = () => {
   return (
-    <ScrollView style={styles.container}>
+    <View style={styles.container}>
       <Text style={styles.text}>Create Account</Text>
       <Text style={styles.text1}>Sign up to get started</Text>
 
@@ -81,7 +80,7 @@ const CreateAccount = () => {
           <Text style={styles.text7}>Login</Text>
         </TouchableOpacity>
       </View>
-    </ScrollView>
+    </View>
   );
 };
 const styles = StyleSheet.create({
