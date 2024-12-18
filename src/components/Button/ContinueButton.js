@@ -1,15 +1,13 @@
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import React from 'react';
 
-const ContinueButton = ({Label, backgroundcolor, }) => {
+const ContinueButton = ({Label, backgroundcolor, onpress}) => {
   return (
     <View>
       <TouchableOpacity
-        style={[
-          styles.container2,
-          {backgroundColor: backgroundcolor},
-        ]}
-        activeOpacity={0.5}>
+        style={[styles.container2, {backgroundColor: backgroundcolor}]}
+        activeOpacity={0.5}
+        onPress={onpress}>
         <Text style={styles.text4}>{Label}</Text>
       </TouchableOpacity>
     </View>

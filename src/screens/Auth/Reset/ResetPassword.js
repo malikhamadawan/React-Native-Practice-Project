@@ -1,9 +1,13 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {ContinueButton} from '../../../components/Button/ContinueButton';
 import {AppInput} from '../../../components/Input/AppInput';
+import {useNavigation} from '@react-navigation/native';
 
-const ResetScreen = () => {
+const ResetPassword = () => {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Reset Password</Text>
@@ -17,11 +21,25 @@ const ResetScreen = () => {
         label={'Password'}
         placeholder={'Enter Password'}
       />
-      <ContinueButton Label={'Continue'} backgroundcolor={'#093ccf'} />
+      <View style={{width: '88%', alignSelf: 'center', marginTop: 210}}>
+        <ContinueButton
+          Label={'Continue'}
+          backgroundcolor={'#093ccf'}
+          onpress={() => {
+            navigation.navigate('PasswordChanged');
+          }}
+        />
+      </View>
       <View style={styles.container3}>
         <Text>Remember Password?</Text>
         <TouchableOpacity>
-          <Text style={styles.text5}>Login</Text>
+          <Text
+            style={styles.text5}
+            onPress={() => {
+              navigation.navigate('Login');
+            }}>
+            Login
+          </Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -57,4 +75,4 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
 });
-export default ResetScreen;
+export default ResetPassword;

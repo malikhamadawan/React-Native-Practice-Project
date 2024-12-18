@@ -34,7 +34,7 @@ const AppInput = ({label, imageSrc, icon, placeholder}) => {
         <TextInput
           style={styles.input1}
           placeholder={placeholder}
-          placeholderTextColor={'#000'}
+          placeholderTextColor={'gray'}
           value={password}
           onChangeText={setPassword}
           secureTextEntry={!isPasswordVisible}

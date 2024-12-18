@@ -2,8 +2,11 @@
 import React from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
 import {ContinueButton} from '../../../components/Button/ContinueButton';
+import {useNavigation} from '@react-navigation/native';
 
 const PasswordChanged = () => {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <Image
@@ -13,17 +16,19 @@ const PasswordChanged = () => {
           height: 35,
           width: 35,
           marginTop: 300,
-          //   backgroundColor: 'red',
         }}
       />
       <Text style={styles.text}>Password Changed</Text>
       <Text style={styles.text1}>Yes password has been changed</Text>
       <Text style={styles.text2}>successfully.</Text>
-      {/* <TouchableOpacity style={styles.container1}>
-        <Text style={styles.text3}>Back to Login</Text>
-      </TouchableOpacity> */}
-      <View style={{width: '78%', marginTop:30}}>
-        <ContinueButton Label={'Back to Login'} backgroundcolor={'#093ccf'} />
+      <View style={{width: '78%', marginTop: 30}}>
+        <ContinueButton
+          Label={'Back to Login'}
+          backgroundcolor={'#093ccf'}
+          onpress={() => {
+            navigation.navigate('Login');
+          }}
+        />
       </View>
     </View>
   );

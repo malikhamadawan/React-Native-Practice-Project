@@ -1,8 +1,10 @@
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {AppInput} from '../../../components/Input/AppInput';
+import {useNavigation} from '@react-navigation/native';
 
 const Login = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Login</Text>
@@ -13,7 +15,10 @@ const Login = () => {
         label={'Email'}
         placeholder={'Enter your Email '}
       />
-      <TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate('ResetPassword');
+        }}>
         <Text style={styles.text3}>Forgot Password?</Text>
       </TouchableOpacity>
       <AppInput
@@ -25,7 +30,10 @@ const Login = () => {
       <TouchableOpacity style={styles.container1} activeOpacity={0.5}>
         <Text style={styles.text5}>Login</Text>
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate('CreateAccount');
+        }}>
         <Text style={styles.text6}>Create Account</Text>
       </TouchableOpacity>
     </View>

@@ -8,9 +8,13 @@ import {
   TouchableOpacity,
   Platform,
 } from 'react-native';
-import { AppInput } from '../../../components/Input/AppInput';
+import {AppInput} from '../../../components/Input/AppInput';
+import PhoneButtonInput from '../../../components/Button/PhoneButtonInput';
+import {useNavigation} from '@react-navigation/native';
 
 const CreateAccount = () => {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Create Account</Text>
@@ -20,27 +24,23 @@ const CreateAccount = () => {
         icon={false}
         imageSrc={require('../../../assets/images/user.webp')}
         label={'Name'}
-        placeholder={'Enter your name '}
+        placeholder={'Enter First and Last Name '}
       />
 
       <AppInput
         icon={false}
         imageSrc={require('../../../assets/images/emailicon.png')}
         label={'Email'}
-        placeholder={'Enter your Email '}
+        placeholder={'Enter Email '}
       />
+      <Text style={{fontSize: 17, marginLeft: 23, marginTop: 18}}>Phone</Text>
 
-      <AppInput
-        icon={false}
-        label={'Phone'}
-        placeholder={'Enter your Phone '}
-      />
-
+      <PhoneButtonInput />
       <AppInput
         icon={true}
         imageSrc={require('../../../assets/images/lock.png')}
         label={'Password'}
-        placeholder={'Enter your Password'}
+        placeholder={'Enter Password'}
       />
       <TouchableOpacity style={styles.touch}>
         <Text style={styles.text3}>Create Account</Text>
@@ -77,7 +77,13 @@ const CreateAccount = () => {
       <View style={styles.container5}>
         <Text style={styles.text6}>Already have an account?</Text>
         <TouchableOpacity>
-          <Text style={styles.text7}>Login</Text>
+          <Text
+            style={styles.text7}
+            onPress={() => {
+              navigation.navigate('Login');
+            }}>
+            Login
+          </Text>
         </TouchableOpacity>
       </View>
     </View>
